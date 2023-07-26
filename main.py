@@ -20,7 +20,7 @@ for folder in folders:
 
     for i, load in enumerate(loads):
         # Modify the file prefix accordingly for each folder type (e.g., "FCFS", "SRPT", "PS")
-        file_name = os.path.join(folder_path, f"{folder}_LOAD_%.1f.txt" % load)
+        file_name = os.path.join(folder_path, f"{folder}_LOAD_{load:.1f}.txt")
 
         with open(file_name, "r") as my_file:
             # reading the file
@@ -51,4 +51,3 @@ plt.ylim(0, 10)  # Set the y-axis limits from 0 to 10
 plt.yticks(np.arange(0, 12, 2))  # Set the y-axis tick locations and labels from 0 to 10 with an increment of 2
 
 plt.show()
-
